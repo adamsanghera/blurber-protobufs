@@ -16,7 +16,7 @@ package subscription
 import proto "github.com/golang/protobuf/proto"
 import fmt "fmt"
 import math "math"
-import common "github.com/adamsanghera/blurber/protobufs/dist/common"
+import common "github.com/adamsanghera/blurber-protobufs/dist/common"
 
 import (
 	context "golang.org/x/net/context"
