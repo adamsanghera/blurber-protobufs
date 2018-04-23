@@ -10,7 +10,7 @@ mkdir dist/common > /dev/null 2>&1
 
 # Complie the files
 
-protoc --go_out=plugins=grpc:$GOPATH/src \
+protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobufs/dist/common \
        ./common.proto
 
 protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobufs/dist/blurb \
