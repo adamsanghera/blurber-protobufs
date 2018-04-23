@@ -13,11 +13,11 @@ mkdir dist/common > /dev/null 2>&1
 protoc --go_out=plugins=grpc:$GOPATH/src \
        ./common.proto
 
-protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber/protobufs/dist/blurb \
+protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobufs/dist/blurb \
        ./blurb.proto
 
-protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber/protobufs/dist/user \
+protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobufs/dist/user \
        ./user.proto
 
-protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber/protobufs/dist/subscription \
+protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobufs/dist/subscription \
        ./subscription.proto
