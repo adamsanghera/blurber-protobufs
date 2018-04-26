@@ -6,7 +6,8 @@ service SubscriptionDB {
   rpc Add(Subscription) returns (Empty);
   rpc Delete(Subscription) returns (Empty);
   rpc DeletePresenceOf(UserID) returns (Empty);
-  rpc GetLeadersOf(UserID) returns (Leaders);
+  rpc GetLeadersOf(UserID) returns (Users);
+  rpc GetFollowersOf(UserID) returns (Users);
 }
 
 message Subscription {
@@ -14,6 +15,6 @@ message Subscription {
   UserID Leader = 2;
 }
 
-message Leaders {
-  repeated UserID leaders = 1;
+message Users {
+  repeated UserID users = 1;
 }
