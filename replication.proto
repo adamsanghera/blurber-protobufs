@@ -1,0 +1,55 @@
+syntax="proto3";
+
+import "google/protobuf/any.proto";
+
+service Replication {
+  rpc Prepare(PrepareArgs) returns (PrepareReply);
+  rpc Recovery(RecoveryArgs) returns (RecoveryReply);
+  rpc ViewChange(VCArgs) returns (VCReply);
+  rpc StartView(SVArgs) returns (SVReply);
+}
+
+message Command {
+  google.protobuf.Any Cmd = 1;
+}
+
+message PrepareArgs {
+  int32 View = 1;
+  int32 PrimaryCommit = 2;
+  int32 Index = 3;
+  Command Entry = 4;
+}
+
+message PrepareReply {
+  int32 View = 1;
+  bool Success = 2;
+}
+
+message VCArgs {
+  int32 View = 1;
+}
+
+message VCReply {
+  int32 LastNormalView = 1;
+  repeated Command Log = 2;
+  bool Success = 3;
+}
+
+message SVArgs {
+  int32 View = 1;
+  repeated Command Log = 2;
+}
+
+message SVReply {}
+
+message RecoveryArgs {
+  int32 View = 1;
+  int32 Server = 2;
+}
+
+message RecoveryReply {
+  int32 View = 1;
+  repeated Command Entries = 2;
+  int32 PrimaryCommit = 3;
+  bool Success = 4;
+}

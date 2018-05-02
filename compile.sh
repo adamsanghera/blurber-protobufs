@@ -7,6 +7,7 @@ mkdir dist/blurb > /dev/null 2>&1
 mkdir dist/user > /dev/null 2>&1
 mkdir dist/subscription > /dev/null 2>&1
 mkdir dist/common > /dev/null 2>&1
+mkdir dist/replication > /dev/null 2>&1
 
 # Complie the files
 
@@ -21,3 +22,10 @@ protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobu
 
 protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobufs/dist/subscription \
        ./subscription.proto
+
+protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobufs/dist/replication \
+       ./replication.proto
+
+echo "Mission Accomplished ;)" && echo ""
+
+tree dist
