@@ -3,6 +3,10 @@ syntax="proto3";
 import "google/protobuf/any.proto";
 
 service Replication {
+  // External API
+  rpc Replicate(Command) returns (ReplicateReply);
+
+  // Internal API
   rpc Prepare(PrepareArgs) returns (PrepareReply);
   rpc Recovery(RecoveryArgs) returns (RecoveryReply);
   rpc ViewChange(VCArgs) returns (VCReply);
@@ -11,6 +15,12 @@ service Replication {
 
 message Command {
   google.protobuf.Any Cmd = 1;
+}
+
+message ReplicateReply {
+  int32 Index = 1;
+  int32 View = 2;
+  bool Success = 3;
 }
 
 message PrepareArgs {
