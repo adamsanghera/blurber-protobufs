@@ -54,8 +54,7 @@ message SVReply {}
 
 message RecoveryArgs {
   int32 View = 1;
-  int32 Server = 2;
-  string Address = 3;
+  string Address = 2;
 }
 
 message RecoveryReply {
