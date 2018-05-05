@@ -55,6 +55,7 @@ message SVReply {}
 message RecoveryArgs {
   int32 View = 1;
   int32 Server = 2;
+  string Address = 3;
 }
 
 message RecoveryReply {
@@ -62,4 +63,5 @@ message RecoveryReply {
   repeated Command Entries = 2;
   int32 PrimaryCommit = 3;
   bool Success = 4;
+  repeated string Peers = 5;
 }
