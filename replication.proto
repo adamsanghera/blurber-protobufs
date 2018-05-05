@@ -64,4 +64,5 @@ message RecoveryReply {
   int32 PrimaryCommit = 3;
   bool Success = 4;
   repeated string Peers = 5;
+  int32 NewIdentity = 6;
 }
