@@ -11,3 +11,8 @@ message UserID {
 message Error {
   string Message = 1;
 }
+
+message ServerInfo {
+  string Address = 1;
+  int32 Index = 2;
+}

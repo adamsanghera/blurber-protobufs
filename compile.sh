@@ -26,6 +26,6 @@ protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobu
 protoc --go_out=plugins=grpc:$GOPATH/src/github.com/adamsanghera/blurber-protobufs/dist/replication \
        ./replication.proto
 
-echo "Mission Accomplished ;)" && echo ""
+echo "Compilation of protobufs accomplished!" && echo ""
 
 tree dist

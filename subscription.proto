@@ -11,6 +11,9 @@ service SubscriptionDB {
   // Non-replicated RPCs
   rpc GetLeadersOf(UserID) returns (Users);
   rpc GetFollowersOf(UserID) returns (Users);
+
+  // Replication Stewardship
+  rpc Leader(Empty) returns (ServerInfo);
 }
 
 message Subscription {
