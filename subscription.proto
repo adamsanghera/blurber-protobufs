@@ -14,6 +14,7 @@ service SubscriptionDB {
 
   // Replication Stewardship
   rpc Leader(Empty) returns (ServerInfo);
+  rpc PromptViewChange(Empty) returns (Empty);
 }
 
 message Subscription {
